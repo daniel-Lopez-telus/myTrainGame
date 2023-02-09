@@ -1,0 +1,55 @@
+@startuml
+
+object TrainGame
+object Action
+object whistle
+object turnOn
+object turnOff
+object move
+object stop
+object goals
+object track
+object downtown
+object forrest
+object train
+object expressTrain
+object RegularTrain
+object LoadTrain
+object Engine
+object ElectricEngine
+object RegularEngine
+object DieselEngine
+object Power
+object moveTrain
+object whistleTrain
+object stopTrain
+
+TrainGame *-- train
+TrainGame *-- track
+
+turnOn -up-|> Action
+turnOff -up-|> Action
+whistle -up-|> Action
+move -up-|> Action
+stop -up-|> Action
+
+TrainGame o-- goals
+train *-- Action
+expressTrain -up-|> train
+RegularTrain -up-|> train
+LoadTrain -up-|> train
+
+train *-- Engine
+Engine --> Power
+ElectricEngine -up-|> Engine
+RegularEngine -up-|> Engine
+DieselEngine -up-|> Engine
+
+downtown -up-|> track
+forrest -up-|> track
+
+moveTrain -up-|> goals
+whistleTrain -up-|> goals
+stopTrain -up-|> goals
+
+@enduml

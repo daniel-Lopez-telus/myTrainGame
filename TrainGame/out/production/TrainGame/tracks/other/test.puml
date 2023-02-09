@@ -1,0 +1,31 @@
+@startuml carr
+
+    object car
+    object engine
+    object v4
+    object v8
+    object tire
+    object roadWheel
+    object earthWheel
+    object chasis
+    object pickup
+    object torque
+    object goals
+
+    car o-- chasis
+    car *-- goals
+    accelerate -up-|> goals
+    chasis o-- engine
+    chasis o-- tire
+
+    v4 -up-|> engine
+    v8 -up-|> engine
+    
+
+    roadWheel -up-|> tire
+    earthWheel -up-|> tire
+
+    pickup -left-|> chasis
+
+
+@enduml
